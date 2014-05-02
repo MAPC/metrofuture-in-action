@@ -20,7 +20,7 @@ require 'fixtures/counties'
 
 require 'fixtures/muni_counties'
 
-models = %w( County Region ) # CommunityType CommunitySubtype Department FundingSource Municipality Strategy SubStrategy Subregion Region County
+models = %w( ) # CommunityType CommunitySubtype Department FundingSource Municipality Strategy SubStrategy Subregion Region County
 
 models.each do |class_name|
   model = Module.const_get class_name
@@ -40,9 +40,12 @@ end
 # muni_subtypes
 
 # Subregion.create        subregions
-County.create(counties, without_protection: true)
-muni_counties
+# County.create(counties, without_protection: true)
+# muni_counties
 
-Region.create           regions
+# Region.create           regions
 
+# ma = State.create(name: 'Massachusetts', abbr: 'MA', fips: '25')
+# ma.municipalities << Municipality.all
 
+update_geometries

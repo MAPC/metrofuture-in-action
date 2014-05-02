@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140429171833) do
+ActiveRecord::Schema.define(:version => 20140502190431) do
 
   create_table "community_subtypes", :force => true do |t|
     t.string   "name"
@@ -52,14 +52,16 @@ ActiveRecord::Schema.define(:version => 20140429171833) do
   create_table "municipalities", :force => true do |t|
     t.string   "name"
     t.integer  "muni_id"
-    t.spatial  "geom",                 :limit => {:srid=>4326, :type=>"multi_polygon", :geographic=>true}
     t.integer  "community_subtype_id"
-    t.datetime "created_at",                                                                               :null => false
-    t.datetime "updated_at",                                                                               :null => false
+    t.datetime "created_at",                                                            :null => false
+    t.datetime "updated_at",                                                            :null => false
     t.integer  "county_id"
+    t.integer  "state_id"
+    t.spatial  "geom",                 :limit => {:srid=>3785, :type=>"multi_polygon"}
   end
 
   add_index "municipalities", ["community_subtype_id"], :name => "index_municipalities_on_community_subtype_id"
+  add_index "municipalities", ["geom"], :name => "index_municipalities_on_geom", :spatial => true
 
   create_table "municipalities_projects", :id => false, :force => true do |t|
     t.integer "municipality_id"
@@ -111,6 +113,14 @@ ActiveRecord::Schema.define(:version => 20140429171833) do
   create_table "regions", :force => true do |t|
     t.string   "name"
     t.string   "rpa_name"
+    t.string   "abbr"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.string   "fips"
     t.string   "abbr"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

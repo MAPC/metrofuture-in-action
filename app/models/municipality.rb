@@ -1,16 +1,16 @@
 class Municipality < ActiveRecord::Base
   attr_accessible :muni_id, :name, :geom
 
-  belongs_to :county
-  belongs_to :community_subtype
+  GEOFACTORY = RGeo::Geographic.simple_mercator_factory
+  set_rgeo_factory_for_column(:geom, GEOFACTORY.projection_factory)
   
+  belongs_to :community_subtype
+  belongs_to :county
+  belongs_to :state
+
   has_and_belongs_to_many :regions
   has_and_belongs_to_many :subregions
   
-  
-  GEOFACTORY = RGeo::Geographic.spherical_factory(srid: 4326)
-  set_rgeo_factory_for_column(:geom, GEOFACTORY)
-
   validates :name, presence: true, length: { minimum: 3, maximum: 70 }
 
   def community_type

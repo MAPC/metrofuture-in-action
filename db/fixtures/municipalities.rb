@@ -17,3 +17,11 @@ def muni_subtypes
     m.save
   end
 end
+
+def update_geometries
+  munis = File.new(Rails.root + 'db/fixtures/geometries/municipalities/mf_munis.csv')
+
+  CSV.foreach(munis, headers: true) do |row|
+    Municipality.find(row['muni_id']).update_attribute(:geom, row['geom'])
+  end
+end

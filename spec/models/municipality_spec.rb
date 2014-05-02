@@ -17,6 +17,8 @@ describe Municipality do
   it { should respond_to :regions }
   it { should respond_to :subregions }
 
+  it { should respond_to :state }
+
 
   it { should be_valid }
 
