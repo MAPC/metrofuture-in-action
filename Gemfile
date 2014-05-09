@@ -28,9 +28,10 @@ group :development, :test do
   gem 'launchy'
 
   # Deploy with Capistrano
-  gem 'capistrano',      '~> 2.0'
-  gem 'net-ssh',         '2.7.0'
-  gem 'net-ssh-gateway', '1.2.0'
+  gem 'capistrano',         '~> 2.0'
+  gem 'net-ssh',            '2.7.0'
+  gem 'net-ssh-gateway',    '1.2.0'
+  gem 'capistrano-unicorn', '0.2.0', :require => false
 end
 
 # Gems used only for assets and not required
