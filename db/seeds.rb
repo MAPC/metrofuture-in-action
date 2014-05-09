@@ -29,23 +29,23 @@ models.each do |class_name|
 end
 
 
-# CommunityType.create    community_types
-# CommunitySubtype.create community_subtypes
-# Department.create       departments
-# FundingSource.create    funding_sources
-# Strategy.create         strategies
-# SubStrategy.create      substrategies
+CommunityType.create    community_types
+CommunitySubtype.create community_subtypes
+Department.create       departments
+FundingSource.create    funding_sources
+Strategy.create         strategies
+SubStrategy.create      substrategies
 
-# Municipality.create     municipalities
-# muni_subtypes
+Municipality.create     municipalities
+muni_subtypes
 
-# Subregion.create        subregions
-# County.create(counties, without_protection: true)
-# muni_counties
+Subregion.create        subregions
+County.create(counties, without_protection: true)
+muni_counties
 
-# Region.create           regions
+Region.create           regions
 
-# ma = State.create(name: 'Massachusetts', abbr: 'MA', fips: '25')
-# ma.municipalities << Municipality.all
+ma = State.create(name: 'Massachusetts', abbr: 'MA', fips: '25')
+ma.municipalities << Municipality.all
 
-update_geometries
+# update_geometries

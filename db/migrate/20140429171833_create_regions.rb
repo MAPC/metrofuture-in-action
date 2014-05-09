@@ -1,5 +1,5 @@
 class CreateRegions < ActiveRecord::Migration
-  def change
+  def up
     create_table :regions do |t|
       t.string :name
       t.string :rpa_name
@@ -12,8 +12,13 @@ class CreateRegions < ActiveRecord::Migration
       t.integer :municipality_id
       t.integer :region_id
     end
+
+    execute "COPY municipalities_regions FROM '#{Rails.root}/db/fixtures/relations/municipalities_regions.csv' DELIMITER ',' CSV HEADER"
   end
 
-  # COPY municipalities_regions FROM '/Users/mapcuser/Projects/MetroFuture In Action/in-action/db/fixtures/relations/municipalities_regions.csv' DELIMITER ',' CSV HEADER;
+  def down
+    drop_table :regions
+    drop_table :municipalities_regions
+  end
 
 end
