@@ -56,8 +56,8 @@ gem 'rabl', '0.9.3'
 gem 'oj',   '2.7.2'
 
 # Use unicorn as the app server
-gem 'unicorn', '0.63.0'
-gem 'foreman', '4.8.2'
+gem 'unicorn', '4.8.2'
+gem 'foreman', '0.63.0'
 
 
 # To use debugger

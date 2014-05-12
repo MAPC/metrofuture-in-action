@@ -200,28 +200,28 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-postgis-adapter
+  activerecord-postgis-adapter (= 0.6.5)
   capistrano (~> 2.0)
   capistrano-unicorn (= 0.2.0)
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
-  factory_girl_rails
-  foreman
-  haml
-  has_scope
-  jquery-rails
-  launchy
+  factory_girl_rails (= 4.4.1)
+  foreman (= 0.63.0)
+  haml (= 4.0.5)
+  has_scope (= 0.5.1)
+  jquery-rails (= 3.1.0)
+  launchy (= 2.4.2)
   net-ssh (= 2.7.0)
   net-ssh-gateway (= 1.2.0)
-  oj
+  oj (= 2.7.2)
   paperclip (~> 3.0)
-  pg
-  rabl
+  pg (= 0.17.1)
+  rabl (= 0.9.3)
   rails (= 3.2.13)
-  rgeo
-  rgeo-geojson
-  rspec-rails
+  rgeo (= 0.3.20)
+  rgeo-geojson (= 0.2.3)
+  rspec-rails (= 2.14.2)
   sass-rails (~> 3.2.3)
   therubyracer
   uglifier (>= 1.0.3)
-  unicorn
+  unicorn (= 4.8.2)
