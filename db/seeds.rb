@@ -20,7 +20,7 @@ require 'fixtures/counties'
 
 require 'fixtures/muni_counties'
 
-models = %w( ) # CommunityType CommunitySubtype Department FundingSource Municipality Strategy SubStrategy Subregion Region County
+models = %w( CommunityType CommunitySubtype Department FundingSource Municipality Strategy SubStrategy Subregion Region County State )
 
 models.each do |class_name|
   model = Module.const_get class_name

@@ -12,8 +12,6 @@ class CreateRegions < ActiveRecord::Migration
       t.integer :municipality_id
       t.integer :region_id
     end
-
-    execute "COPY municipalities_regions FROM '#{Rails.root}/db/fixtures/relations/municipalities_regions.csv' DELIMITER ',' CSV HEADER"
   end
 
   def down

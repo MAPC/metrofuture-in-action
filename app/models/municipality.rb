@@ -13,6 +13,10 @@ class Municipality < ActiveRecord::Base
   
   validates :name, presence: true, length: { minimum: 3, maximum: 70 }
 
+  def region
+    regions.first
+  end
+
   def community_type
     community_subtype.community_type unless community_subtype.nil?
   end
