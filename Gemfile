@@ -5,14 +5,14 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-gem 'activerecord-postgis-adapter'
-gem 'has_scope'
+gem 'pg', '0.17.1'
+gem 'activerecord-postgis-adapter', '0.6.5'
+gem 'has_scope',    '0.5.1'
 
-gem 'rgeo'
-gem 'rgeo-geojson'
+gem 'rgeo',         '0.3.20'
+gem 'rgeo-geojson', '0.2.3'
 
-gem 'haml'
+gem 'haml',         '4.0.5'
 
 gem 'paperclip', '~> 3.0'
 # TODO gem 'aws-sdk'
@@ -22,10 +22,10 @@ gem 'paperclip', '~> 3.0'
 
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara', '1.1.2'
-  gem 'factory_girl_rails'
-  gem 'launchy'
+  gem 'rspec-rails',        '2.14.2'
+  gem 'capybara',           '1.1.2'
+  gem 'factory_girl_rails', '4.4.1'
+  gem 'launchy',            '2.4.2'
 
   # Deploy with Capistrano
   gem 'capistrano',         '~> 2.0'
@@ -46,18 +46,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '3.1.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use RABL templates for JSON
-gem 'rabl'
-gem 'oj'
+gem 'rabl', '0.9.3'
+gem 'oj',   '2.7.2'
 
 # Use unicorn as the app server
-gem 'unicorn'
-gem 'foreman'
+gem 'unicorn', '0.63.0'
+gem 'foreman', '4.8.2'
 
 
 # To use debugger
