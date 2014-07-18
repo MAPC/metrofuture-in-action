@@ -20,7 +20,17 @@ require 'fixtures/counties'
 
 require 'fixtures/muni_counties'
 
-models = %w( CommunityType CommunitySubtype Department FundingSource Municipality Strategy SubStrategy Subregion Region County State )
+models = %w(  CommunityType
+              CommunitySubtype
+              Department
+              FundingSource
+              Municipality
+              Strategy
+              SubStrategy
+              Subregion
+              Region
+              County
+              State             )
 
 models.each do |class_name|
   model = Module.const_get class_name
@@ -29,23 +39,25 @@ models.each do |class_name|
 end
 
 
-CommunityType.create    community_types
-CommunitySubtype.create community_subtypes
-Department.create       departments
-FundingSource.create    funding_sources
-Strategy.create         strategies
-SubStrategy.create      substrategies
+community_types.each    { |e| CommunityType.create_or_update    e }
+community_subtypes.each { |e| CommunitySubtype.create_or_update e }
+departments.each        { |e| Department.create_or_update       e }
+funding_sources.each    { |e| FundingSource.create_or_update    e }
+strategies.each         { |e| Strategy.create_or_update         e }
+substrategies.each      { |e| SubStrategy.create_or_update      e }
 
-Municipality.create     municipalities
+municipalities.each     { |e| Municipality.create_or_update     e }
 muni_subtypes
 
-Subregion.create        subregions
-County.create(counties, without_protection: true)
+subregions.each { |e| Subregion.create_or_update e }
+counties.each   { |e| County.create_or_update    e }
 muni_counties
 
-Region.create           regions
+regions.each    { |e| Region.create_or_update    e }
+copy_filedata("#{Rails.root}/db/fixtures/relations/municipalities_regions.csv", :municipalities_regions)
 
 ma = State.create(name: 'Massachusetts', abbr: 'MA', fips: '25')
 ma.municipalities << Municipality.all
 
-# update_geometries
+
+

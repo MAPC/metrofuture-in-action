@@ -1,5 +1,5 @@
 def copy_filedata(filepath, table_name)
-  
+
   conn = ActiveRecord::Base.connection_pool.checkout
   raw  = conn.raw_connection
 
