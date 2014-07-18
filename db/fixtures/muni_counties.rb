@@ -8,7 +8,7 @@ def muni_counties
     Municipality.find(muni_id).update_attribute(:county_id, county_id)
 
     muni = Municipality.find(muni_id)
-    muni.county = County.find_by_fips("0#{county_id}")
+    muni.county = County.find_by_fips(county_id)
     muni.save
   end
 end
